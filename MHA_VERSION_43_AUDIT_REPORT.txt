@@ -1,0 +1,27 @@
+MHA VERSION 43 — فائل آڈٹ رپورٹ (16-11-2026)
+
+ماخذ: صارف کی فراہم کردہ MHA_VERSION_42_SUPABASE.zip
+مقصد: GitHub Pages project-subpath اور Vercel root deployment کے path مسائل درست کرنا؛ icon duplicates کم کرنا؛ باقی Supabase application structure برقرار رکھنا۔
+
+تبدیلیاں:
+- index.html کے manifest/favicon/apple-touch links relative کیے؛ JS script versions 43 کیے۔
+- Service worker registration relative اور scope-aware کی۔
+- sw.js کو registration.scope کی بنیاد پر repository subpath-aware بنایا؛ cache namespace v43 کیا اور سابقہ MHA caches صاف کرنے کا behavior برقرار رکھا۔
+- manifest start_url/scope/icons relative کیے؛ چار icon entries نہیں بلکہ دو size entries (192,512) ہیں، اور disk پر چار canonical PNG files موجود ہیں۔
+- duplicate icon-green-*.png اور apple-touch-green.png شامل نہیں کیے؛ صرف icon-32, icon-192, icon-512, apple-touch-icon رکھے۔
+- پرانے نیلے CSS accents کو سبز palette سے تبدیل کیا؛ warning/danger colors برقرار رکھے۔
+- README اردو اور .nojekyll شامل کیے۔
+
+اہم حقائق:
+- V42 app.js اب بھی legacy firebase.* compatibility namespace calls استعمال کرتا ہے، مگر firebase namespace supabase-adapter.js میں locally shim ہوتا ہے اور calls Supabase public.mha_documents میں جاتی ہیں۔ index.html میں Firebase SDK include نہیں۔ یہ Firebase database migration/import نہیں ہے۔
+- SUPABASE_SETUP.sql existing table/data کو drop/reset نہیں کرتا۔ خالی ڈیٹا کے لیے نیا Supabase project درکار ہے؛ اس build نے کوئی database operation نہیں چلایا۔
+- Existing SQL RLS has broad approved-user read access; multi-worker row isolation is NOT verified. Do not use with sensitive production data until RLS is redesigned and tested.
+- App contains existing features inherited from V42, but not all historical feature requests have been fully implemented or live-tested.
+
+Validation:
+- ZIP structure: root-level deploy files.
+- manifest JSON parse: expected.
+- index links use relative paths; subpage horizontal navigation helper returns empty while Back Arrow remains in shell.
+- service worker, app.js and adapter JavaScript syntax checked with Node.js: passed.
+- app.js updated to suppress the horizontal navigation strip (dashboard tiles remain), and legacy blue accent hex values replaced with green palette; existing back-arrow routing retained.
+- Live GitHub Pages/Vercel deployment and Supabase authentication not tested in this environment.
