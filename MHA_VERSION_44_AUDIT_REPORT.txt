@@ -1,0 +1,7 @@
+MHA VERSION 44 — STATIC AUDIT
+
+Source: user-uploaded MHA_VERSION_43_GITHUB_READY.zip
+Checks performed: JS syntax (node --check), JSON manifest parse, required icon file existence, ZIP integrity.
+Changes: password visibility toggle; credit wording; DD-MM-YY option; corrected icon paths; service-worker cache version bumped to v44; manifest icon paths updated.
+Not tested: live Supabase authentication/database/RLS, role isolation, push notifications, GitHub deployment, Android home-screen icon refresh.
+Not implemented in this patch: free-position invoice template designer; database-backed globally sequential invoice numbering. Existing invoice template download is Excel-only and the app explicitly says Excel edits are not auto-imported.
