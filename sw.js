@@ -1,4 +1,4 @@
-// MHA Version 43 service worker: GitHub Pages project-path safe.
+// MHA Version 47 service worker: GitHub Pages project-path safe.
 const MHA_SW_VERSION = 'mha-supabasev46';
 const BASE_URL = new URL('./', self.registration.scope);
 const SHELL_PATHS = ['', 'index.html', 'app.js?v=45', 'supabase-adapter.js?v=45', 'manifest.webmanifest?v=45', 'icon-32.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];

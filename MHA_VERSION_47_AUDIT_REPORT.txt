@@ -1,0 +1,11 @@
+MHA VERSION 47 AUDIT
+- Source: Version 46 project ZIP.
+- Added local JSON backup download button (device/browser download flow).
+- Added order cancellation action and retained admin permanent delete with explicit warning.
+- Added Full Payment label; Add Payment and Cancel remain.
+- Bulk archive clear now preserves original orders and payment records, marking archiveHidden and deleting invoiceArchive copies only.
+- Removed App Colour Theme and Currency controls from App Settings; Rs. is fixed.
+- Existing Excel invoice template retained.
+- `node --check app.js`: PASS.
+- ZIP integrity: to be verified after packaging.
+- Not live-tested against Supabase or Android browser.
