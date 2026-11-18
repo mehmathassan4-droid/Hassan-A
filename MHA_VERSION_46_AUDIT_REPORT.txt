@@ -1,0 +1,12 @@
+MHA VERSION 46 — STATIC PATCH REPORT
+
+Base: MHA_VERSION_45_CLOUD_PHARMA_PATCH.zip
+Changes in V46:
+- Removed pharmaCompany from newly saved order item objects.
+- Invoice grouping now reads pharmaCompany exclusively from Product Master by productId; old order snapshots are ignored.
+- Added Urdu version notes.
+- Service worker cache identifiers checked for version bump where present.
+
+Not implemented/verified by this patch: universal delete/edit controls for supplier payments, employee salaries, finance, returns, all approval records and every collection; atomic ledger recalculation; live Supabase Storage/RLS; live database persistence; GitHub deployment; Android/PWA; invoice print output.
+
+The V45 cloud backup migration remains separate and must be run once if not already configured. Do not rerun SUPABASE_SETUP.sql.

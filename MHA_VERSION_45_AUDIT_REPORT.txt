@@ -1,0 +1,10 @@
+MHA VERSION 45 — STATIC VERIFICATION REPORT
+
+Source: user-uploaded MHA_VERSION_44_PATCHED.zip
+Changes: Pharma Company field and invoice pharma grouping; order item pharma snapshot; Supabase Storage cloud backup UI; archived invoice individual/all delete; admin order delete; product/store local cache resurrection fix; service worker cache version 45.
+
+Checks passed: Node.js syntax check (node --check app.js); manifest JSON parse; required icons exist; source ZIP extracted; final ZIP integrity test.
+
+Not tested: live Supabase auth/RLS/storage policies; migration execution; GitHub Pages deployment; actual Android/desktop PWA install; live invoice printing; multi-user isolation.
+Not fully implemented: universal edit/delete for supplier payments, employee salaries, finance, returns, all approval rows; transactional cross-record reversal; sequential invoice counter; drag/drop invoice designer; complete role-based data isolation.
+Safety: V45 SQL migration creates private cloud bucket and admin-only storage policies. It does not delete/reset existing business data. Run only MHA_V45_CLOUD_BACKUP_SETUP.sql; do not rerun SUPABASE_SETUP.sql.
