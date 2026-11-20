@@ -1,0 +1,14 @@
+MHA VERSION 48 AUDIT
+Base: uploaded MHA_VERSION_47_LOCAL_BACKUP_ORDER_INVOICE.zip
+Changes:
+1. Flattened package: application files are at ZIP root (no nested project folders).
+2. show() resets document/body/app scroll positions to top on each render.
+3. All input[type=date] fields receive quick Month and Year selectors; original native date input remains intact.
+4. Service worker cache version and app asset query versions bumped to 48.
+Validation:
+- node --check app.js: PASS
+- ZIP testzip: PASS
+Not verified:
+- Live Supabase operations/RLS.
+- Actual Android native date picker display and behavior on target device.
+- Full end-to-end accounting, invoice, backup, and role workflows.

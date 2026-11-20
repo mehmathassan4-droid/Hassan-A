@@ -1,7 +1,7 @@
 // MHA Version 47 service worker: GitHub Pages project-path safe.
-const MHA_SW_VERSION = 'mha-supabasev46';
+const MHA_SW_VERSION = 'mha-supabasev48';
 const BASE_URL = new URL('./', self.registration.scope);
-const SHELL_PATHS = ['', 'index.html', 'app.js?v=45', 'supabase-adapter.js?v=45', 'manifest.webmanifest?v=45', 'icon-32.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
+const SHELL_PATHS = ['', 'index.html', 'app.js?v=48', 'supabase-adapter.js?v=48', 'manifest.webmanifest?v=48', 'icon-32.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 const SHELL_URLS = SHELL_PATHS.map(path => new URL(path, BASE_URL).href);
 const EXTERNAL_LIBS = ['https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'];
 self.addEventListener('install', event => {
